@@ -1,10 +1,12 @@
 asgiref==3.8.1
+dj-database-url==2.2.0
 Django==4.2.1
 gunicorn==22.0.0
 numpy==2.0.0
 opencv-python==4.10.0.84
 opencv-python-headless==4.10.0.84
 packaging==24.1
+psycopg2==2.9.9
 sqlparse==0.5.1
 typing_extensions==4.12.2
 tzdata==2024.1
