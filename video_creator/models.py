@@ -16,7 +16,7 @@ class Video(models.Model):
     title = models.CharField(max_length=255,blank=True)
     text = models.TextField()
     duration = models.FloatField(validators=[MinValueValidator(limit_value = 1.0)])
-    resolution = models.CharField(max_length=10)
+    resolution = models.CharField(max_length=10,validators=[validate_resolution])
     background_color = models.CharField(max_length=7)
     font_color = models.CharField(max_length=7)
     font_scale = models.FloatField(default=2.0,validators=[MinValueValidator(limit_value = 1.0)])
