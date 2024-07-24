@@ -1,5 +1,15 @@
+import re
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.core.validators import MinValueValidator
+
+def validate_resolution(value):
+    pattern = re.compile(r'^\d+x\d+$')
+    if not pattern.match(value):
+        raise ValidationError(
+            '%(value) не является допустимым форматом разрешения.\nПожалуйста, напишите разрешение в следующем формате: {"int x int"}'',
+            params={'value': value},
+        )
 
 # Create your models here.
 class Video(models.Model):
